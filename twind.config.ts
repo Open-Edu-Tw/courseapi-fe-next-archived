@@ -3,7 +3,10 @@ import * as colors from "twind/colors";
 
 const config: Configuration = {
   theme: {
-    colors,
+    colors: {
+      ...colors,
+      "light-blue": colors.lightBlue,
+    },
     borderRadius: {
       DEFAULT: "0.5rem",
     },

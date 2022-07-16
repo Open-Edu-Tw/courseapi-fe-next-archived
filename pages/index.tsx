@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import { tw } from 'twind'
+import { tw } from "twind";
 import { Button } from "@/components";
 import { DownloadIcon } from "@/icons";
 

@@ -11,7 +11,6 @@ const config: Configuration = {
       DEFAULT: "0.5rem",
     },
   },
-  hash: true,
 };
 
 export default config;

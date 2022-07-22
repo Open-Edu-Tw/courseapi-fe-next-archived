@@ -13,6 +13,7 @@
   "dependencies": {
     "@twind/next": "^1.0.9",
     "classnames": "^2.3.1",
+    "lodash-es": "^4.17.21",
     "next": "12.2.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -20,6 +21,7 @@
     "type-fest": "^2.16.0"
   },
   "devDependencies": {
+    "@types/lodash-es": "^4.17.6",
     "@types/node": "18.0.3",
     "@types/react": "18.0.15",
     "@types/react-dom": "18.0.6",

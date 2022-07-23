@@ -1,7 +1,6 @@
 import classNames from "classnames";
 import type { ReactNode } from "react";
 import React from "react";
-import { tw } from "twind";
 import type { RequireAtLeastOne } from "type-fest";
 
 export type ButtonProps = RequireAtLeastOne<
@@ -41,14 +40,12 @@ export function Button({
       type="button"
       // FIXME:  min-height will be much better.
       className={classNames(
-        tw`
-          text-gray-800 dark:text-gray-200
+        `
+          text-slate-800 dark:text-slate-200
           rounded flex gap-3 items-center justify-items-center h-8
         `,
         // Our type check has been ensured the colorClass[color] will be defined.
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unsafe-member-access
         colorClass[color],
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unsafe-member-access
         sizeClass[size]
       )}
       {...props}
@@ -60,14 +57,14 @@ export function Button({
 }
 
 const colorClass = {
-  basic: tw`bg-gray-200 dark:bg-gray-700`,
-  accent: tw`bg-blue-200 dark:bg-light-blue-700`,
+  basic: 'bg-slate-200 dark:bg-slate-700',
+  accent: 'bg-blue-200 dark:bg-light-blue-700',
 } as const;
 
 const sizeClass = {
-  medium: tw`px-5 py-2`,
-  large: tw`px-10 py-4`,
-  xl: tw`px-20 py-6 text-xl`,
+  medium: 'px-5 py-2',
+  large: 'px-10 py-4',
+  xl: 'px-20 py-6 text-xl',
 } as const;
 
 export default Button;

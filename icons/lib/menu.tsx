@@ -1,5 +1,4 @@
 import * as React from "react";
-import { tw } from "twind";
 
 export function MenuIcon(props: React.ComponentPropsWithoutRef<"svg">) {
   return (
@@ -15,19 +14,19 @@ export function MenuIcon(props: React.ComponentPropsWithoutRef<"svg">) {
         y1="2.5"
         x2="14"
         y2="2.5"
-        className={tw`stroke-current text-gray-800 dark:text-gray-200`}
+        className="stroke-slate-800 dark:stroke-slate-200"
       />
       <line
         y1="6.5"
         x2="14"
         y2="6.5"
-        className={tw`stroke-current text-gray-800 dark:text-gray-200`}
+        className="stroke-slate-800 dark:stroke-slate-200"
       />
       <line
         y1="10.5"
         x2="14"
         y2="10.5"
-        className={tw`stroke-current text-gray-800 dark:text-gray-200`}
+        className="stroke-slate-800 dark:stroke-slate-200"
       />
     </svg>
   );

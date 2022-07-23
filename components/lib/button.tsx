@@ -57,14 +57,14 @@ export function Button({
 }
 
 const colorClass = {
-  basic: 'bg-slate-200 dark:bg-slate-700',
-  accent: 'bg-blue-200 dark:bg-light-blue-700',
+  basic: "bg-slate-200 dark:bg-slate-700",
+  accent: "bg-blue-200 dark:bg-light-blue-700",
 } as const;
 
 const sizeClass = {
-  medium: 'px-5 py-2',
-  large: 'px-10 py-4',
-  xl: 'px-20 py-6 text-xl',
+  medium: "px-5 py-2",
+  large: "px-10 py-4",
+  xl: "px-20 py-6 text-xl",
 } as const;
 
 export default Button;

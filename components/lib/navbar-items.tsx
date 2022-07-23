@@ -1,6 +1,6 @@
-import classNames from 'classnames';
-import Link from 'next/link';
-import React from 'react';
+import classNames from "classnames";
+import Link from "next/link";
+import React from "react";
 
 /**
  * The available navbar item.
@@ -8,31 +8,31 @@ import React from 'react';
  * It is not directly related to the page.
  */
 export enum NavbarEntry {
-	Recommends = 'recommended',
-	Favorites = 'favorites',
-	HotCourses = 'hot_courses',
-	Hashtags = 'hashtags',
+  Recommends = "recommended",
+  Favorites = "favorites",
+  HotCourses = "hot_courses",
+  Hashtags = "hashtags",
 }
 
 export const NavbarItemUrlMap: Record<NavbarEntry, string> = {
-	[NavbarEntry.Recommends]: '/recommends',
-	[NavbarEntry.Favorites]: '/favorites',
-	[NavbarEntry.HotCourses]: '/hot-courses',
-	[NavbarEntry.Hashtags]: '/hashtags',
+  [NavbarEntry.Recommends]: "/recommends",
+  [NavbarEntry.Favorites]: "/favorites",
+  [NavbarEntry.HotCourses]: "/hot-courses",
+  [NavbarEntry.Hashtags]: "/hashtags",
 };
 
 export const NavbarItemDisplayNameMap: Record<NavbarEntry, string> = {
-	[NavbarEntry.Recommends]: '個人推薦',
-	[NavbarEntry.Favorites]: '收藏課程',
-	[NavbarEntry.HotCourses]: '話題課程',
-	[NavbarEntry.Hashtags]: 'Hashtags',
+  [NavbarEntry.Recommends]: "個人推薦",
+  [NavbarEntry.Favorites]: "收藏課程",
+  [NavbarEntry.HotCourses]: "話題課程",
+  [NavbarEntry.Hashtags]: "Hashtags",
 };
 
 export type NavbarItemsProps = {
-	/**
-	 * 要選取的 Navbar 項目。
-	 */
-	selected?: NavbarEntry;
+  /**
+   * 要選取的 Navbar 項目。
+   */
+  selected?: NavbarEntry;
 };
 
 /**
@@ -51,37 +51,37 @@ export type NavbarItemsProps = {
  * <NavbarItems selected={NavbarEntry.Recommended} />
  */
 export function NavbarItems(props: NavbarItemsProps) {
-	return (
-		<section className="flex items-center gap-5 navbar-items">
-			{Object.values(NavbarEntry).map((item) => {
-				const url = NavbarItemUrlMap[item] as string | undefined;
-				const displayName = NavbarItemDisplayNameMap[item] as
-					| string
-					| undefined;
+  return (
+    <section className="flex items-center gap-5 navbar-items">
+      {Object.values(NavbarEntry).map((item) => {
+        const url = NavbarItemUrlMap[item] as string | undefined;
+        const displayName = NavbarItemDisplayNameMap[item] as
+          | string
+          | undefined;
 
-				// 有時候，因為 Storybook 的未知 bug，
-				// 所以 item 會得出非預期的值。
-				// 此時，url 和 displayName 會是 null。
-				//
-				// 因此，我們將 NavbarItem*Map[item] 取出的值
-				// 假設為 string | null，然後再檢查是不是 null；
-				// 如果是 null，則不顯示。
-				if (!url || !displayName) return null;
+        // 有時候，因為 Storybook 的未知 bug，
+        // 所以 item 會得出非預期的值。
+        // 此時，url 和 displayName 會是 null。
+        //
+        // 因此，我們將 NavbarItem*Map[item] 取出的值
+        // 假設為 string | null，然後再檢查是不是 null；
+        // 如果是 null，則不顯示。
+        if (!url || !displayName) return null;
 
-				return (
-					<Link key={item} href={url}>
-						<span
-							className={classNames('cursor-pointer', {
-								'font-bold': props.selected === item,
-							})}
-						>
-							{displayName}
-						</span>
-					</Link>
-				);
-			})}
-		</section>
-	);
+        return (
+          <Link key={item} href={url}>
+            <span
+              className={classNames("cursor-pointer", {
+                "font-bold": props.selected === item,
+              })}
+            >
+              {displayName}
+            </span>
+          </Link>
+        );
+      })}
+    </section>
+  );
 }
 
 export default NavbarItems;

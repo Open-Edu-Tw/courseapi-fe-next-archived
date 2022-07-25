@@ -64,7 +64,7 @@ export function SearchBar({
   return (
     <section
       className={classNames(
-        "flex gap-3 py-2 search-bar text-primary bg-secondary rounded text-sm",
+        "flex gap-3 py-2 search-bar text-primary bg-secondary rounded text-sm bg-gray-100 dark:bg-gray-800 dark:text-white",
         {
           "px-3": variant === SearchBarVariant.Collapsed,
           "px-5": variant === SearchBarVariant.Expanded,
@@ -74,7 +74,7 @@ export function SearchBar({
       {/* add y-padding to make the button size match the input box */}
       <button
         type="button"
-        className="flex items-center justify-center py-1"
+        className="flex items-center justify-center"
         onClick={() => {
           if (onSearchIconPressed) onSearchIconPressed();
         }}

@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import { Button } from "@/components";
-import { DownloadIcon } from "@/icons";
+import { PlayIcon } from "@/icons";
 
 const Home: NextPage = () => {
   //  const [currentStyle, setCurrentStyle] = useState<HeaderStyle>(HeaderStyle.Mobile);
@@ -23,15 +23,17 @@ const Home: NextPage = () => {
 
   return (
     <div>
-      <h1 className="font-bold text-center">Hello Next.js</h1>
-      <Button size="medium" color="accent" label="登入" />
-      <br />
-      <Button
-        icon={<DownloadIcon />}
-        size="medium"
-        color="accent"
-        label="下載"
-      />
+      <h1 className="font-bold text-center">Hello Course API</h1>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
+        <Button icon={<PlayIcon />} size="medium" color="basic" label="觀看" />
+        <br />
+        <Button icon={<PlayIcon />} size="medium" color="accent" label="觀看" />
+      </div>
     </div>
   );
 };

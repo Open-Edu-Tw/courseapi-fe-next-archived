@@ -6,3 +6,4 @@ export * from "./lib/search";
 export * from "./lib/share";
 export * from "./lib/stroke-star";
 export * from "./lib/toedu-logo";
+export * from "./lib/courseapi-logo";

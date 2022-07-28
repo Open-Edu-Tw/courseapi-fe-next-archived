@@ -3,6 +3,7 @@ import { useState } from "react";
 import type { NextPage } from "next";
 import { Button, SearchBar, SearchBarVariant } from "@/components";
 import { PlayIcon } from "@/icons";
+import { CourseAPILogo } from "@/icons";
 
 const ComponentsPage: NextPage = () => {
   //  const [currentStyle, setCurrentStyle] = useState<HeaderStyle>(HeaderStyle.Mobile);
@@ -27,38 +28,17 @@ const ComponentsPage: NextPage = () => {
 
   return (
     <div>
-      <h1 className="font-bold text-center">Hello Course API</h1>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-        }}
-      >
-        <Button icon={<PlayIcon />} size="medium" color="basic" label="觀看" />
-        &nbsp;
-        <Button icon={<PlayIcon />} size="medium" color="accent" label="觀看" />
-      </div>
-      <br />
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-        }}
-      >
-        <SearchBar
-          variant={SearchBarVariant.Collapsed}
-          onSearchIconPressed={() => {
-            alert("Search icon was pressed");
-          }}
-        />
-        &nbsp;
-        <SearchBar
-          variant={SearchBarVariant.Expanded}
-          content={content}
-          onChange={(e) => setContent(e.target.value)}
-          onSearchIconPressed={() => alert("Search icon was pressed")}
-        />
-      </div>
+    	<nav className="bg-white px-2 sm:px-4 py-5">
+    		<div className="container flex flex-wrap justify-between items-center mx-auto">
+    			<a href="https://courseapi.org" className="flex items-center"><CourseAPILogo /></a>
+    			<SearchBar
+		        variant={SearchBarVariant.Expanded}
+		        content={content}
+		        onChange={(e) => setContent(e.target.value)}
+		        onSearchIconPressed={() => alert("Search icon was pressed")}
+		      />
+    		</div>
+    	</nav>
     </div>
   );
 };
